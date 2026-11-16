@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect | Smart Campus Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <h2>🎓 CampusConnect</h2>
+
+            <nav>
+                <a href="#profile">Student Profile</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#register">Register Student</a>
+                <a href="#directory">Student Directory</a>
+                <a href="#connections">Connections</a>
+                <a href="#shortest-path">Shortest Path (BFS)</a>
+                <a href="#leaderboard">GPA Leaderboard</a>
+                <a href="#bst">BST Search</a
+                <a href="#network">Campus Network</a>
+                <a href="#editStudent">Edit Student</a>
+                <a href="#deleteStudent">Delete Student</a>
+                <a href="#hashSearch">Hash Table Search</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Campus Dashboard</h1>
+                    <p>Smart Peer-to-Peer Campus Networking Platform</p>
+                </div>
+                <span class="status">● System Online</span>
+            </header>
+
+            <section id="dashboard">
+                <h2>Overview</h2>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>Total Students</h3>
+                        <p id="totalStudents">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Departments</h3>
+                        <p id="totalDepartments">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Network Connections</h3>
+                        <p id="totalConnections">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="register" class="panel">
+                <h2>Register Student</h2>
+
+                <form id="studentForm">
+                    <input type="text" id="studentId" placeholder="Student ID" required>
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <input type="text" id="department" placeholder="Department" required>
+                    <input type="number" id="year" placeholder="Year" min="1" max="4" required>
+                    <input type="number" id="gpa" placeholder="GPA" min="0" max="10" step="0.01" required>
+                    <button type="submit">Register Student</button>
+                </form>
+                <p id="registerMessage"></p>
+            </section>
+
+            <section id="directory" class="panel">
+                <h2>Student Directory</h2>
+                <input type="text" id="searchInput" placeholder="Search students...">
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Year</th>
+                                <th>GPA</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        <section id="connections" class="panel">
+    <section id="profile" class="panel">
+    <h2>Student Profile</h2>
+
+    <div class="form-row">
+        <input type="text" id="profileStudentId"
+               placeholder="Enter Student ID">
+        <button id="viewProfileBtn">View Profile</button>
+    </div>
+
+    <div id="profileResult"></div>
+</section>
+<section id="editStudent" class="panel">
+    <h2>Edit Student Details</h2>
+
+    <input type="text" id="editStudentId"
+           placeholder="Enter Student ID">
+
+    <input type="text" id="editName"
+           placeholder="Updated Name">
+
+    <input type="email" id="editEmail"
+           placeholder="Updated Email">
+
+    <input type="text" id="editDepartment"
+           placeholder="Updated Department">
+
+    <input type="number" id="editYear"
+           placeholder="Updated Year" min="1" max="4">
+
+    <input type="number" id="editGpa"
+           placeholder="Updated GPA" min="0" max="10" step="0.01">
+
+    <button id="updateStudentBtn">Update Student</button>
+
+    <p id="editStudentMessage"></p>
+</section>
+<section id="deleteStudent" class="panel">
+    <h2>Delete Student</h2>
+
+    <div class="form-row">
+        <input type="text" id="deleteStudentId"
+               placeholder="Enter Student ID">
+
+        <button id="deleteStudentBtn">Delete Student</button>
+    </div>
+
+    <p id="deleteStudentMessage"></p>
+</section>
+            <h2>Student Connections</h2>
+
+    <div class="form-row">
+        <input type="text" id="studentOne" placeholder="First Student ID">
+        <input type="text" id="studentTwo" placeholder="Second Student ID">
+
+        <button id="connectBtn">Add Connection</button>
+        <button id="removeConnectionBtn">Remove Connection</button>
+    </div>
+
+    <p id="connectionMessage"></p>
+
+    <input type="text" id="connectionStudentId" placeholder="Enter Student ID">
+    <button id="viewConnectionsBtn">View Connections</button>
+
+    <div id="connectionsResult"></div>
+</section>
+
+            <section id="shortest-path" class="panel">
+                <h2>Shortest Connection Path (BFS)</h2>
+
+                <div class="form-row">
+                    <input type="text" id="fromStudent" placeholder="From Student ID">
+                    <input type="text" id="toStudent" placeholder="To Student ID">
+                    <button id="findPathBtn">Find Shortest Path</button>
+                </div>
+
+                <div id="pathResult"></div>
+            </section>
+
+            <section id="leaderboard" class="panel">
+                <h2>GPA Leaderboard</h2>
+                <button id="loadLeaderboardBtn">Load Leaderboard</button>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>GPA</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="bst" class="panel">
+                <h2>Binary Search Tree (BST)</h2>
+
+                <input type="text" id="bstStudentId" placeholder="Enter Student ID">
+                <button id="bstSearchBtn">Search Student</button>
+                <p id="bstResult"></p>
+
+                <button id="traversalBtn">Show Inorder Traversal</button>
+                <div id="traversalResult"></div>
+            </section>
+            <section id="hashSearch" class="panel">
+    <h2>Hash Table Search</h2>
+
+    <div class="form-row">
+        <input type="text" id="hashStudentId"
+               placeholder="Enter Student ID">
+
+        <button id="hashSearchBtn">Search Student</button>
+    </div>
+
+    <div id="hashResult"></div>
+</section>
+
+            <section id="network" class="panel">
+                <h2>Campus Network</h2>
+                <button id="loadNetworkBtn">View Network</button>
+                <div id="networkResult"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
